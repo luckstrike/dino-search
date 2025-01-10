@@ -4,7 +4,7 @@ A terminal-based search engine written in Go, with future web API support.
 
 ## Project Structure
 
-\`\`\`
+```
 search-engine/
 ├── cmd/
 │   ├── cli/                    # Command-line interface
@@ -21,24 +21,26 @@ search-engine/
 ├── docs/                      # Documentation
 ├── scripts/                   # Build scripts
 └── test/                     # Integration tests
-\`\`\`
+```
 
 ## Getting Started
 
 1. Build the project:
-   \`\`\`bash
+
+   ```bash
    make build
-   \`\`\`
+   ```
 
 2. Run the search engine:
-   \`\`\`bash
+
+   ```bash
    make run
-   \`\`\`
+   ```
 
 ## Development
 
-- \`make dev\`: Build and run the application
-- \`make clean\`: Clean build artifacts
+- `make dev`: Build and run the application
+- `make clean`: Clean build artifacts
 
 ## License
 
