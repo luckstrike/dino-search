@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/luckstrike/dino-search/internal/crawler"
 )
 
 const (
@@ -71,8 +73,8 @@ func printHelp() {
 }
 
 func performSearch(query string) error {
-	// TODO: Implement this later
-	fmt.Println("Searching for %s", query)
-	fmt.Println("( Searching to be implemented... )")
+	fmt.Printf("Searching for %s\n", query)
+
+	crawler.Crawl(query)
 	return nil
 }
