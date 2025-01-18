@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/luckstrike/dino-search/internal/crawler"
+	"github.com/luckstrike/dino-search/internal/scraper"
 )
 
 const (
@@ -76,5 +77,22 @@ func performSearch(query string) error {
 	fmt.Printf("Searching for %s\n", query)
 
 	crawler.Crawl(query)
+	return nil
+}
+
+// This could probably be combined with the performSearch function in the future
+func processURL(url string) error {
+	scraper := scraper.NewScraper()
+	content, err := scraper.Scrape(url)
+
+	// TODO: Change this later when you add in a way to save website content
+	if false {
+		fmt.Println(content)
+	}
+
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
