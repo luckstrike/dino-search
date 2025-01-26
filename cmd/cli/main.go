@@ -3,11 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
 	"github.com/luckstrike/dino-search/internal/crawler"
 	"github.com/luckstrike/dino-search/internal/scraper"
+	"github.com/luckstrike/dino-search/internal/storage"
 )
 
 const (
@@ -15,6 +17,12 @@ const (
 )
 
 func main() {
+	db, err := storage.InitDB()
+	if err != nil {
+		log.Fatal("Could not initialize database:", err)
+	}
+	defer db.Close()
+
 	fmt.Println("Welcome to the Search Engine")
 	fmt.Println("Type 'quit' or 'exit' to close the program")
 	fmt.Println("Type 'help' for available commands")
