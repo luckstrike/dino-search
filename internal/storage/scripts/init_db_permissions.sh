@@ -2,7 +2,7 @@
 # scripts/init_database.sh
 
 # First check if .env exists
-if [ ! -f ../.env ]; then
+if [ ! -f ../../../.env ]; then
   echo "Error: .env file not found in parent directory"
   exit 1
 fi
@@ -10,7 +10,7 @@ fi
 # Load ALL variables from .env file
 # set -a allows the variables to be exported automatically
 set -a
-source ../.env
+source ../../../.env
 set +a
 
 # Now we can create a temporary SQL file with our variables interpolated

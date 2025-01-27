@@ -3,7 +3,7 @@
 
 # Load environment variables
 set -a
-source ../.env
+source ../../../../.env
 set +a
 
 # Function to check if the database exists
@@ -66,7 +66,7 @@ echo "Starting database setup testing..."
 
 # First, run the setup script
 echo "Running database setup script..."
-./init_database.sh
+../init_db_permissions.sh
 
 # Now run all our checks
 failed=0
